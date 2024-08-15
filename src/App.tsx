@@ -1,19 +1,16 @@
+import * as React from "react";
 import {useQuery, useMutation, useQueryClient, QueryClient, QueryClientProvider} from '@tanstack/react-query';
-// import {style} from './styles.css.ts';
-import * as styles from './styles.css.ts'; 
-
+import {RouterProvider } from "react-router-dom";
+import router from "./router/router";
 const queryClient = new QueryClient();
 
-function App() {
+const App = () => {
+//const App:React.FC = ()=> {
   return (
     <>
-      <div className={styles.container}>
-        <h1 className={styles.exampleH1}>Vite + React + Typescript + MSW + zustand + vanilla-extract</h1>
-      </div>
-      <QueryClientProvider client={queryClient}>
-        {/*  */}
-      </QueryClientProvider>
-    </>
+      <RouterProvider router={router} />
+      <QueryClientProvider client={queryClient}/>
+    </> 
   )
 }
 
