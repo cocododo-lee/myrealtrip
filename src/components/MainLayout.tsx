@@ -1,8 +1,6 @@
 import React from 'react'
 // import {style} from '../styles.css.ts';
 import * as styles from '../styles.css.ts'; 
-import { Link } from 'react-router-dom';
-
 const Layout:React.FC  = () => {
   return (
     <div>
