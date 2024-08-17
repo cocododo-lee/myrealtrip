@@ -1,7 +1,8 @@
 import React from 'react'
 // import {style} from '../styles.css.ts';
 import * as styles from '../styles.css.ts'; 
-const Layout:React.FC  = () => {
+
+const MainLayout:React.FC  = () => {
   return (
     <div>
       <div className={styles.container}>
@@ -12,4 +13,4 @@ const Layout:React.FC  = () => {
   )
 }
 
-export default Layout
+export default MainLayout

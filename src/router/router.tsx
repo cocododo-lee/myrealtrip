@@ -1,33 +1,36 @@
-import { createBrowserRouter, RouteObject } from "react-router-dom";
-import Home from "../components/Home";
-import Menu1 from "../components/Menu1";
-import ErrorPage from "../components/ErrorPage";
-import MainLayout from "../components/MainLayout";
+import { createBrowserRouter, Navigate, RouteObject } from "react-router-dom";
+import Root from "../layout/Root";
+import webPath from "../constants/Path"; 
 import Depth1 from "../components/Depth1";
+import Menu1 from "../components/Menu1";
+import ErrorPage from "../pages/ErrorPage";
+import Home from "../components/Home";
+
 const routes:RouteObject[] = [
     {
         path:'/',
-        element:<MainLayout/>,
-        errorElement:<ErrorPage/>,
+        element:<Root/>,
         children : [
             {
-                path:'dpeth1',
-                index:true,
-                element:<Depth1/>,
+                path:'/',
+                element:<Navigate to={webPath.home()} replace/>,
             },
-        {
-            path:'home',
-            element:<Home/>,
-        },{
-            path:'menu1',
-            element : <Menu1 />,
-        },
-        ]
+            {
+                path: webPath.home(), 
+                element: <Home />,    
+            },
+            {
+                path:webPath.menu1(),
+                element:<Menu1/>,
+            },{
+                path:webPath.depth1(),
+                element : <Depth1/>,
+            },
+        ],
+    }, {
+        path:'*',
+        element:<ErrorPage/>,
     },
-    // {
-    //     path:'*',
-    //     element:<ErrorPage/>,
-    // },
 ];
 
 const router = createBrowserRouter(routes);
