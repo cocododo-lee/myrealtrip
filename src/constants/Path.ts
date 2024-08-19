@@ -1,4 +1,4 @@
-import home from "../components/Home";
+
 const webPath = {
     home:() => "/home",
     // mypack : () => "/mypack", // 마이팩 

@@ -1,9 +1,8 @@
 import { createBrowserRouter, Navigate, RouteObject } from "react-router-dom";
 import Root from "../layout/Root";
-import webPath from "../constants/Path"; 
+import webPath from "../constants/path"; 
 import Depth1 from "../components/Depth1";
 import Menu1 from "../components/Menu1";
-import ErrorPage from "../pages/ErrorPage";
 import Home from "../components/Home";
 
 const routes:RouteObject[] = [
@@ -29,7 +28,7 @@ const routes:RouteObject[] = [
         ],
     }, {
         path:'*',
-        element:<ErrorPage/>,
+        element:<div><h1>!Error!</h1>Not Found page!</div>,
     },
 ];
 

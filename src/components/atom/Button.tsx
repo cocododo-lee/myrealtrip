@@ -1,8 +1,11 @@
 import React from 'react'
 
-const Button = () => {
+const Button = (buttonSetting) => {
   return (
-    <div>Button</div>
+    <>  
+    
+
+    </>
   )
 }
 
