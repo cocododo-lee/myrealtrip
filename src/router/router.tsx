@@ -4,6 +4,7 @@ import webPath from "../constants/path";
 import Depth1 from "../components/Depth1";
 import Menu1 from "../components/Menu1";
 import Home from "../components/Home";
+import MainLayout from "../layout/MainLayout";
 
 const routes:RouteObject[] = [
     {
@@ -12,7 +13,8 @@ const routes:RouteObject[] = [
         children : [
             {
                 path:'/',
-                element:<Navigate to={webPath.home()} replace/>,
+                element:<MainLayout/>
+                // element:<Navigate to={webPath.home()} replace/>,
             },
             {
                 path: webPath.home(), 
