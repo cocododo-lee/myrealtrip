@@ -1,6 +1,6 @@
 import React, { ReactElement, ReactNode } from 'react'
-import {PaletteTypes} from '../../styles/palette'
-import {typographVariants} from '../../styles/typography.css.ts'
+import {PaletteTypes} from '../../types/palette.ts'
+import {typographVariants} from '../../types/typography.css.ts'
 import clsx from 'clsx';
 
 type Variant = keyof typeof typographVariants;
@@ -27,12 +27,6 @@ const Buttons = ({className, children, variant}:ButtonProps):ReactElement => {
       <button className={clsx(className,variantClass)} >
         {children}
       </button>
-      
-      {/* 공부용 코멘트는 최종 머지될 때 정리하여 삭제할 예정입니다! 
-         ✏️ 0821 참고글 : https://hackids.tistory.com/133
-          => ✅ 0821 멘토님 피드백 URL : https://doiler.tistory.com/m/40
-          => ✅ 0823 멘토님 도움 참고 URL : https://www.material-tailwind.com/docs/react/typography
-      */}
     </>
   )
 }

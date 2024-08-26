@@ -1,8 +1,7 @@
 import React from 'react'
-// import {style} from '../styles.css.ts';
-import * as styles from '../styles.css.ts'; 
+import * as styles from '../styles/styles.css.ts'; 
+import * as buttons from '../styles/buttons.css.ts'; 
 import Buttons from '../components/atoms/Buttons.tsx';
-import * as buttons from '../components/atoms/Buttons.css.ts'; 
 
 const MainLayout:React.FC  = () => {
   return (
