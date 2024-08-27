@@ -1,5 +1,6 @@
 import React, { Suspense} from 'react'
 import { Outlet, ScrollRestoration } from 'react-router-dom';
+import {BounceLoader} from 'react-spinners';
 
 type MainLayoutProps = {
     children : React.ReactNode;
@@ -12,7 +13,7 @@ const MainLayout:React.FC<MainLayoutProps> = ({children}) =>{
 const Root = () => {
   return (
     <MainLayout>
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<BounceLoader />}>
           <Outlet/>
         </Suspense>
         <ScrollRestoration/>
