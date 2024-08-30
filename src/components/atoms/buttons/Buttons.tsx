@@ -1,6 +1,6 @@
 import React, { ReactElement, ReactNode } from 'react'
-import {PaletteTypes} from '../../types/palette.ts'
-import {typographVariants} from '../../types/typography.css.ts'
+import {PaletteTypes} from '../../../types/palette.ts'
+import {typographVariants} from '../../../types/typography.css.ts'
 import clsx from 'clsx';
 
 type Variant = keyof typeof typographVariants;
