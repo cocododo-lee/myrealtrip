@@ -1,4 +1,3 @@
-
 const webPath = {
     // mypack : () => "/mypack", // 마이팩 
     // hotel : () => "/hotel",// 호텔 

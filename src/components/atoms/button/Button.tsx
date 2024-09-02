@@ -20,7 +20,7 @@ interface ButtonProps extends ButtonStyled{
 }
 
 
-const Buttons = ({className, children, variant}:ButtonProps):ReactElement => {
+const Button = ({className, children, variant}:ButtonProps):ReactElement => {
   const variantClass = variant ? typographVariants[variant] : undefined;
   return (
     <>
@@ -31,4 +31,4 @@ const Buttons = ({className, children, variant}:ButtonProps):ReactElement => {
   )
 }
 
-export default Buttons
+export default Button

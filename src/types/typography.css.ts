@@ -11,6 +11,11 @@ const variants = {
     fontWeight: '700',
     color: 'red',
   },
+  buttonLink:{
+    fontSize:'14px',
+    fontWeight:'700',
+    color:'#495056',
+  },
 };
 
 export const typographVariants = styleVariants(variants);
