@@ -51,3 +51,21 @@ export const iconGnbIconImg = style({
     width:'100%',
     height:'100%'
 });
+export const iconGnbMore = style({
+    display:'inline-flex',
+    alignItems:'center',
+    justifyContent:'center',
+    flexWrap:'wrap',
+    flexDirection:'row-reverse',
+    position:'relative',
+    height:'50px',
+    textDecoration:'none',
+});
+export const dropDownMenu = style({
+    opacity:'0',
+    position:'absolute',
+    top:'40px',
+    left:'0',
+    right:'0',
+    height:'0',
+})

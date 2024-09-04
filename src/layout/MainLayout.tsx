@@ -1,6 +1,7 @@
 import React from 'react'
 import CardList from '../components/organisms/CardList'
 import MenuList from '../components/molecules/MenuList'
+import DropDown from '../components/molecules/DropDown'
 // import * as styles from '../styles/styles.css.ts'; 
 // import * as button from '../components/atoms/button/button.css.ts';
 // import * as badges from '../components/atoms/badge/badge.css.ts';
@@ -12,6 +13,7 @@ const MainLayout:React.FC  = () => {
   return (
     <div>
       <MenuList/>
+      <DropDown/>
       <CardList/>      
       {/* <div className={styles.container}>
           <h1 className={styles.exampleH1}>Layout</h1>
