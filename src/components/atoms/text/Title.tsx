@@ -1,18 +1,16 @@
-import React, { ReactElement, ReactNode } from 'react'
-import {titleVariants} from '../text/title.css'
+import React, { PropsWithChildren, ReactElement, ReactNode } from 'react'
+import {titleVariants} from './Title.css'
 import clsx from 'clsx';
 
 type Variant = keyof typeof titleVariants;
 
-
 interface TitleProps {
     hasIcon?: true;
     variant?: Variant;
-    children: ReactNode;
     className?: string;
 }
   
-const Title = ({className, children, variant}:TitleProps):ReactElement => {
+const Title = ({className, children, variant}:PropsWithChildren<TitleProps>):ReactElement => {
   const variantClass = variant ? titleVariants[variant] : undefined;
   return (
     <div className="titleWrap">
