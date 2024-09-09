@@ -1,8 +1,8 @@
 import React from 'react'
 import Card from '../molecules/card/Card.tsx';
 import {titleVariants} from '../atoms/text/Title.css.ts'
-import ImgJeju from '../../assets/images/country/img_card_jeju.jpg';
-import ImgParis from '../../assets/images/country/img_card_paris.jpg';
+import ImgJeju from '../../assets/images/country/img_card_jeju.webp';
+import ImgParis from '../../assets/images/country/img_card_paris.webp';
 // type Variant = keyof typeof titleVariants;
 
 interface CardItem {

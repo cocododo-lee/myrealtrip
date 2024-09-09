@@ -2,15 +2,15 @@ import React from 'react'
 import MenuButton from '../atoms/button/MenuButton'
 import * as menuButton from '../atoms/button/MenuButton.css.ts'
 import menuGnbMore from '../../assets/images/common/bg_drop_down_arrow.svg';
-import icon10 from '../../assets/images/icon/icon_menu_10.png';
-import icon11 from '../../assets/images/icon/icon_menu_11.png';
-import icon12 from '../../assets/images/icon/icon_menu_12.png';
-import icon13 from '../../assets/images/icon/icon_menu_13.png';
-import icon14 from '../../assets/images/icon/icon_menu_14.png';
-import icon15 from '../../assets/images/icon/icon_menu_15.png';
-import icon16 from '../../assets/images/icon/icon_menu_16.png';
-import icon17 from '../../assets/images/icon/icon_menu_17.png';
-import icon18 from '../../assets/images/icon/icon_menu_18.png';
+import icon10 from '../../assets/images/icon/icon_menu_10.webp';
+import icon11 from '../../assets/images/icon/icon_menu_11.webp';
+import icon12 from '../../assets/images/icon/icon_menu_12.webp';
+import icon13 from '../../assets/images/icon/icon_menu_13.webp';
+import icon14 from '../../assets/images/icon/icon_menu_14.webp';
+import icon15 from '../../assets/images/icon/icon_menu_15.webp';
+import icon16 from '../../assets/images/icon/icon_menu_16.webp';
+import icon17 from '../../assets/images/icon/icon_menu_17.webp';
+import icon18 from '../../assets/images/icon/icon_menu_18.webp';
 
 
 interface DropMenuItem {

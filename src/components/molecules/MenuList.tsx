@@ -2,8 +2,8 @@ import React from 'react'
 import MenuButton from '../atoms/button/MenuButton'
 import * as menuButton from '../atoms/button/MenuButton.css.ts'
 import {typographVariants} from '../../types/typography.css.ts';
-import icon1 from '../../assets/images/icon/icon_menu_1.png'
-import icon2 from '../../assets/images/icon/icon_menu_2.jpg'
+import icon1 from '../../assets/images/icon/icon_menu_1.webp'
+import icon2 from '../../assets/images/icon/icon_menu_2.webp'
 
 type Variant = keyof typeof typographVariants;
 
