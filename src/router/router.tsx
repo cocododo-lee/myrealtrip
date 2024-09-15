@@ -2,6 +2,9 @@ import { createBrowserRouter, Navigate, RouteObject } from "react-router-dom";
 import Root from "../layout/Root";
 import webPath from "../constants/path"; 
 import MainLayout from "../layout/MainLayout";
+import Sub1 from "../pages/Sub1";
+import Hotel from "../pages/Hotel";
+import Mypack from "../pages/Mypack";
 
 const routes:RouteObject[] = [
     {
@@ -10,8 +13,22 @@ const routes:RouteObject[] = [
         children : [
             {
                 path:'/',
-                element:<MainLayout/>
+                element:<MainLayout/>,
                 // element:<Navigate to={webPath.home()} replace/>,
+                children : [
+                    {
+                        path:'/sub1',
+                        element:<Sub1/>
+                    },
+                    {
+                        path:'/mypack',
+                        element:<Mypack/>
+                    },
+                    {
+                        path:'/hotel',
+                        element:<Hotel/>
+                    },
+                ]
             },
         ],
     }, {

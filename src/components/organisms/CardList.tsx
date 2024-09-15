@@ -9,18 +9,21 @@ interface CardItem {
   title: string;
   imgUrl: string;
   btnText : string;
+  keyVal?: string;
 }
 
 const CardListData:CardItem[]= [
   {
     title : "제주",
     imgUrl : ImgJeju,
-    btnText : '둘러보기'
+    btnText : '둘러보기',
+    keyVal : 'carditem1'
   },
   {
     title : "파리",
     imgUrl : ImgParis,
-    btnText : '둘러보기'
+    btnText : '둘러보기',
+    keyVal : 'carditem2'
   },
 ];
 
@@ -31,7 +34,7 @@ const CardList = () => {
       {CardListData.map((el, index)=>{
         return (
           <Card 
-            key={index} 
+            key={el.keyVal} 
             cardTop={
               <strong className={titleVariants.title}>{el.title}</strong>
             } 
