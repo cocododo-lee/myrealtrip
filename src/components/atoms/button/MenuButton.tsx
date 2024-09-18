@@ -4,31 +4,21 @@ import {typographVariants} from '../../../types/typography.css.ts';
 import * as menuButton from './MenuButton.css.ts'
 import clsx from 'clsx'
 import Badge from '../badge/Badge.tsx';
+import type { IMenuListProps } from '../../molecules/MenuList.tsx';
 
-
-type Variant = keyof typeof typographVariants;
-
-interface MenuButtonStyled {
-  linkVal?: string;
+interface MenuButtonStyled extends Omit<IMenuListProps, 'id'>{
   className?: string;
-  hasIcon?:string; //URL
-  variant?: Variant; 
-  isNew?:boolean;
-  id?: string;
 }
 
-const MenuButton = ({children, variant, className, hasIcon, isNew, id, linkVal}:PropsWithChildren<MenuButtonStyled>): JSX.Element | null => { 
-  if (!linkVal) {
-    return null; // linkVal이 없으면 아무것도 렌더링하지 않음
+const MenuButton = ({children, variant, className, hasIcon, isNew, linkTo}:PropsWithChildren<MenuButtonStyled>): JSX.Element | null => { 
+  if (!linkTo) {
+    return null; // linkTo 값이 없으면 아무것도 렌더링하지 않음
   }
 
   const variantClass = variant ? typographVariants[variant] : undefined;
-
-
   return (
     <>
-      <NavLink id={id} className={clsx(className, variantClass)}
-        to={linkVal}
+      <NavLink className={clsx(className, variantClass)} to={linkTo}
       >
         {
           hasIcon && (

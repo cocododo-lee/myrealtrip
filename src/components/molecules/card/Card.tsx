@@ -5,18 +5,18 @@ import * as button from '../../atoms/button/Button.css.ts';
 
 interface TitleProps {
   id?:string;
-  cardTop?:ReactNode;
+  top?:ReactNode;
   hasIcon?: true; 
   imgUrl?: string;
-  btnText?: string;
+  text?: string;
 }
 
-const Card = ({cardTop, imgUrl, btnText, id}:TitleProps):ReactElement => {
+const Card = ({top, imgUrl, text, id}:TitleProps):ReactElement => {
   return (
     <div id={id} className={card.cardItem} style={{background:`url(${imgUrl}) no-repeat left top / cover` }}>
-        {cardTop}
+        {top}
         <Button variant='buttonLink' className={button.btnWhiteRound}>
-          {btnText}
+          {text}
         </Button>
     </div>
   )
