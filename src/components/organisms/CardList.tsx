@@ -12,7 +12,7 @@ interface CardItem {
   text : string;
 }
 
-const CardListData:CardItem[]= [
+const cardList:CardItem[]= [
   {
     id : 'carditem1',
     title : "제주",
@@ -30,20 +30,20 @@ const CardListData:CardItem[]= [
 
 const CardList = () => {
   return (
-    <div>
-      {CardListData.map((el)=>{
+    <>
+      {cardList.map((list)=>{
         return (
-          <Card key={el.id} id={`${el.id}`}
+          <Card key={list.id} id={list.id}
             top={
-              <strong className={titleVariants.title}>{el.title}</strong>
+              <strong className={titleVariants.title}>{list.title}</strong>
             } 
-            imgUrl={el.imgUrl}
-            text = {el.text}
+            imgUrl={list.imgUrl}
+            text = {list.text}
             />
           )
         })
       }
-      </div>
+    </>
   )
 }
 

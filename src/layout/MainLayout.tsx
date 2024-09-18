@@ -4,14 +4,17 @@ import {Outlet} from 'react-router-dom';
 import CardList from '../components/organisms/CardList'
 import MenuList from '../components/molecules/MenuList'
 import DropDown from '../components/molecules/DropDown'
+import SlickSlide from '../components/atoms/slider/Slide';
+import {settings1} from '../constants/settings'
 
 const MainLayout:React.FC  = () => {
-
   return (
     <div>
       <MenuList/>
       <DropDown/>
-      <CardList/>
+      
+      <SlickSlide settings={settings1} contents={<CardList/>} />
+      
       <Outlet/>
    </div>
   )

@@ -4,7 +4,7 @@ import * as card from './Card.css.ts'
 import * as button from '../../atoms/button/Button.css.ts';
 
 interface TitleProps {
-  id?:string;
+  id:string;
   top?:ReactNode;
   hasIcon?: true; 
   imgUrl?: string;
