@@ -6,24 +6,24 @@ import ImgParis from '../../assets/images/country/img_card_paris.webp';
 // type Variant = keyof typeof titleVariants;
 
 interface CardItem {
+  id?:string;
   title: string;
   imgUrl: string;
   btnText : string;
-  keyVal?: string;
 }
 
 const CardListData:CardItem[]= [
   {
+    id : 'carditem1',
     title : "제주",
     imgUrl : ImgJeju,
     btnText : '둘러보기',
-    keyVal : 'carditem1'
   },
   {
+    id : 'carditem2',
     title : "파리",
     imgUrl : ImgParis,
     btnText : '둘러보기',
-    keyVal : 'carditem2'
   },
 ];
 
@@ -31,10 +31,9 @@ const CardListData:CardItem[]= [
 const CardList = () => {
   return (
     <div>
-      {CardListData.map((el, index)=>{
+      {CardListData.map((el)=>{
         return (
-          <Card 
-            key={el.keyVal} 
+          <Card key={el.id} id={`${el.id}`}
             cardTop={
               <strong className={titleVariants.title}>{el.title}</strong>
             } 

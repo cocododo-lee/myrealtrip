@@ -1,5 +1,5 @@
-import React, { PropsWithChildren, ReactElement, ReactNode } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import React, {  PropsWithChildren, } from 'react'
+import { NavLink } from 'react-router-dom'
 import {typographVariants} from '../../../types/typography.css.ts';
 import * as menuButton from './MenuButton.css.ts'
 import clsx from 'clsx'
@@ -14,10 +14,10 @@ interface MenuButtonStyled {
   hasIcon?:string; //URL
   variant?: Variant; 
   isNew?:boolean;
-  keyVal?: string;
+  id?: string;
 }
 
-const MenuButton = ({children, variant, className, hasIcon, isNew, keyVal, linkVal}:PropsWithChildren<MenuButtonStyled>): JSX.Element | null => { 
+const MenuButton = ({children, variant, className, hasIcon, isNew, id, linkVal}:PropsWithChildren<MenuButtonStyled>): JSX.Element | null => { 
   if (!linkVal) {
     return null; // linkVal이 없으면 아무것도 렌더링하지 않음
   }
@@ -27,7 +27,7 @@ const MenuButton = ({children, variant, className, hasIcon, isNew, keyVal, linkV
 
   return (
     <>
-      <NavLink key={keyVal} className={clsx(className, variantClass)}
+      <NavLink id={id} className={clsx(className, variantClass)}
         to={linkVal}
       >
         {

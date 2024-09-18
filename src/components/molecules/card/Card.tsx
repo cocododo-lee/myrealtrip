@@ -4,16 +4,16 @@ import * as card from './Card.css.ts'
 import * as button from '../../atoms/button/Button.css.ts';
 
 interface TitleProps {
+  id?:string;
   cardTop?:ReactNode;
   hasIcon?: true; 
   imgUrl?: string;
   btnText?: string;
-  keyVal?: string;
 }
 
-const Card = ({cardTop, imgUrl, btnText, keyVal}:TitleProps):ReactElement => {
+const Card = ({cardTop, imgUrl, btnText, id}:TitleProps):ReactElement => {
   return (
-    <div key={keyVal} className={card.cardItem} style={{background:`url(${imgUrl}) no-repeat left top / cover` }}>
+    <div id={id} className={card.cardItem} style={{background:`url(${imgUrl}) no-repeat left top / cover` }}>
         {cardTop}
         <Button variant='buttonLink' className={button.btnWhiteRound}>
           {btnText}
