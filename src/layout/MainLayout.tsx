@@ -13,8 +13,10 @@ const MainLayout:React.FC  = () => {
       <MenuList/>
       <DropDown/>
       
-      <SlickSlide settings={settings1} contents={<CardList/>} />
-      
+      {/* <SlickSlide settings={settings1} contents={<CardList/>} /> */}
+      <SlickSlide settings={settings1}>
+        <CardList/>
+      </SlickSlide>
       <Outlet/>
    </div>
   )

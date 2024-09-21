@@ -5,19 +5,17 @@ import './slick-theme.min.css'
 import './slick.min.css'
 
 interface IslideProps {
-  contents:ReactElement;
+  children:ReactElement;
   settings:object;
 }
-const Slide:React.FC<IslideProps> = ({settings, contents}) => {  
-  const slideChildArray: ReactNode[] = React.Children.toArray(contents.props.children);
-
+const Slide:React.FC<IslideProps> = ({settings, children}) => {  
   return (
     <div className="slider-container">
       <Slider {...settings}>
         {
-          slideChildArray.map((items, index) => (
-            <div key={index}>
-              {items}
+          React.Children.map(children, (child) => (
+            <div key={child.key}>
+              {child}
             </div>
           ))
         }
