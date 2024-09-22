@@ -1,6 +1,7 @@
 
 export const defaultSettings = {
     speed: 500,
+    infinite: true,
     slidesToShow: 4,
     slidesToScroll: 4,
 };

@@ -6,7 +6,7 @@ type MainLayoutProps = {
     children : React.ReactNode;
 }
 
-const MainLayout:React.FC<MainLayoutProps> = ({children}) =>{
+const MainLayout = ({children}:MainLayoutProps) =>{
     return children;
 }
 

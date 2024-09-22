@@ -1,9 +1,12 @@
 import React from 'react'
 import Card from '../molecules/card/Card.tsx';
-import {titleVariants} from '../atoms/text/Title.css.ts'
+import Slide from '../atoms/slider/Slide.tsx';
+import { titleVariants } from '../atoms/text/Title.css.ts'
+import { settings1 } from '../../constants/settings.ts';
+//img
 import ImgJeju from '../../assets/images/country/img_card_jeju.webp';
 import ImgParis from '../../assets/images/country/img_card_paris.webp';
-// type Variant = keyof typeof titleVariants;
+
 
 interface CardItem {
   id:string;
@@ -31,18 +34,15 @@ const cardList:CardItem[]= [
 const CardList = () => {
   return (
     <>
-      {cardList.map((list)=>{
-        return (
-          <Card key={list.id} id={list.id}
-            top={
-              <strong className={titleVariants.title}>{list.title}</strong>
-            } 
-            imgUrl={list.imgUrl}
-            text = {list.text}
-            />
-          )
-        })
-      }
+      <Slide items={cardList} settings={settings1} renderItem={(item,idx) => (
+        <Card key={item.id} id={item.id}
+          top={
+            <strong className={titleVariants.title}>{item.title}</strong>
+          } 
+          imgUrl={item.imgUrl}
+          text = {item.text}
+          />
+      )}/>
     </>
   )
 }

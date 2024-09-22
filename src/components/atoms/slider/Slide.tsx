@@ -1,23 +1,24 @@
-import React, { ReactElement, ReactNode } from 'react'
+import React from 'react'
 import Slider from 'react-slick';
 
 import './slick-theme.min.css'
 import './slick.min.css'
 
-interface IslideProps {
-  children:ReactElement;
+interface IslideProps<T> {
+  items:T[];
   settings:object;
+  renderItem:(item:T, index:number) => React.ReactNode;
 }
-const Slide:React.FC<IslideProps> = ({settings, children}) => {  
+
+const Slide = ({items, settings, renderItem}: IslideProps) => {  
   return (
     <div className="slider-container">
       <Slider {...settings}>
-        {
-          React.Children.map(children, (child) => (
-            <div key={child.key}>
-              {child}
-            </div>
-          ))
+        { items.map((item,index) => (
+          <div key={index}>
+            {renderItem(item,index)}
+          </div>
+         ))
         }
       </Slider>
     </div>
