@@ -14,7 +14,7 @@ const Slide = ({items, settings, renderItem}: IslideProps) => {
   return (
     <div className="slider-container">
       <Slider {...settings}>
-        { items.map((item,index) => (
+        { items.map((item, index) => (
           <div key={index}>
             {renderItem(item,index)}
           </div>

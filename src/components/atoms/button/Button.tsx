@@ -11,16 +11,12 @@ interface ButtonStyled {
   hasIcon?: true;
   bgColor?:PaletteTypes; // HEX코드 등을 받기 위한 String
   variant?: Variant;
-}
-
-// 확장-상속
-interface ButtonProps extends ButtonStyled{
   children: ReactNode;
   className?: string;
 }
 
 
-const Button = ({className, children, variant}:ButtonProps):ReactElement => {
+const Button = ({className, children, variant}:ButtonStyled):ReactElement => {
   const variantClass = variant ? typographVariants[variant] : undefined;
   return (
     <>

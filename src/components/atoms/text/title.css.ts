@@ -14,5 +14,14 @@ const variants = {
         textAlign:"left",
         textShadow:"0 1px 8px rgba(33, 37, 41, .6)",
     },
+    cardImgTitle : {
+        fontSize:"28px",
+        fontWeight:"700",
+        color:'#fff',
+        letterSpacing:"-.4px",
+        lineHeight:"1.29",
+        textAlign:"left",
+        textShadow:"0 1px 8px rgba(33, 37, 41, .6)",
+    },
 };
 export const titleVariants = styleVariants(variants);
