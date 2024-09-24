@@ -1,3 +1,4 @@
+import { SlideArrowPrev } from "../components/atoms/slider/SlideArrowPrev";
 
 export const defaultSettings = {
     speed: 500,
@@ -9,8 +10,13 @@ export const defaultSettings = {
 export const settings1 = {
     ...defaultSettings,
 };
+export const settings2= {
+    ...defaultSettings,
+    // nextArrow: <SampleNextArrow />,
+    prevArrow: (<SlideArrowPrev />)
+};
 
-export const settings2 = {
+export const settings3 = {
     ...defaultSettings,
     dots: true,
     infinite: true,

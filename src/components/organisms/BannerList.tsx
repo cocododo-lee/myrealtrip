@@ -5,14 +5,6 @@ import { titleVariants } from '../atoms/text/Title.css.ts'
 import * as  card from '../molecules/card/Card.css.ts'
 import * as  slider from '../atoms/slider/Slider.css.ts'
 //img
-import ImgJeju from '../../assets/images/country/img_card_jeju.webp';
-import ImgParis from '../../assets/images/country/img_card_paris.webp';
-import ImgSokcho from '../../assets/images/country/img_card_sokcho.webp';
-import ImgBangkok from '../../assets/images/country/img_card_bangkok.webp';
-import ImgLondon from '../../assets/images/country/img_card_london.webp';
-import ImgRoma from '../../assets/images/country/img_card_roma.webp';
-import ImgBarcelona from '../../assets/images/country/img_card_barcelona.webp';
-import ImgDanang from '../../assets/images/country/img_card_danang.webp';
 
 interface CardItem {
   id:string;
@@ -21,7 +13,7 @@ interface CardItem {
   text : string;
 }
 
-const cardList:CardItem[]= [
+const bannerList:CardItem[]= [
   {
     id : 'carditem1',
     title : "제주",
@@ -64,7 +56,6 @@ const cardList:CardItem[]= [
     text : '둘러보기',
   },
 ];
-
 import { SlideArrowPrev } from '../atoms/slider/SlideArrowPrev.tsx';
 
 export const settings2= {
@@ -73,7 +64,7 @@ export const settings2= {
   slidesToShow: 4,
   slidesToScroll: 4,
   // nextArrow: <SampleNextArrow />,
-  prevArrow: (<SlideArrowPrev btnClassName={slider.sliderArrowPrev} />)
+  prevArrow: (<SlideArrowPrev className={slider.sliderArrowPrev} />)
 };
 
 

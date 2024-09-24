@@ -3,6 +3,7 @@ import Slider from 'react-slick';
 
 import './slick-theme.min.css'
 import './slick.min.css'
+import clsx from 'clsx';
 
 interface IslideProps<T> {
   items:T[];
@@ -10,9 +11,9 @@ interface IslideProps<T> {
   renderItem:(item:T, index:number) => React.ReactNode;
 }
 
-const Slide = ({items, settings, renderItem}: IslideProps) => {  
+const Slide = ({items, settings, className, renderItem}: IslideProps) => {  
   return (
-    <div className="slider-container">
+    <div className={clsx(className, 'slider-contianer')}>
       <Slider {...settings}>
         { items.map((item, index) => (
           <div key={index}>

@@ -3,11 +3,12 @@ export const cardItem = style({
     zIndex:'0',
     position:'relative',
     overflow:'hidden',
-    margin:'0 0 20px',
+    margin:'0 10px 20px',
     padding:'32px 24px',
-    width:'270px',
+    width:'250px',
     height:'333px',
     borderRadius:'8px',
+    boxShadow:'0 8px 12px 0 rgba(33, 37, 41, .15)',
     boxSizing:'border-box',
     selectors : {
         '&::after' : {
@@ -18,7 +19,6 @@ export const cardItem = style({
             height: '100%',
             top: '0px',
             left: '0px',
-            boxShadow:'0 8px 12px 0 rgba(33, 37, 41, .15)',
         },
     },
 });
