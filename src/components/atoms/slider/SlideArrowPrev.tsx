@@ -1,6 +1,6 @@
 
-import clsx from 'clsx';
 import React from 'react'
+import clsx from 'clsx';
 
 interface PrevArrowProps {
     btnClassName?: string;
@@ -14,5 +14,3 @@ export const SlideArrowPrev = ({btnClassName, onClick }: PrevArrowProps) => {
     </button>
   )
 }
-
-//  default SlideArrowPrev

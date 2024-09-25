@@ -14,9 +14,7 @@ const MainLayout = () => {
       </header>
       <article className='container'>
         <div className={mainStyle.contents}>
-          <section>
-            <Outlet/>
-          </section>
+          <Outlet/>
         </div>
       </article>
       <footer className='footer_wrap'>

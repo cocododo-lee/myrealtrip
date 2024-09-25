@@ -66,14 +66,15 @@ const cardList:CardItem[]= [
 ];
 
 import { SlideArrowPrev } from '../atoms/slider/SlideArrowPrev.tsx';
+import { SlideArrowNext } from '../atoms/slider/SlideArrowNext.tsx';
 
 export const settings2= {
   speed: 500,
   infinite: true,
   slidesToShow: 4,
   slidesToScroll: 4,
-  // nextArrow: <SampleNextArrow />,
-  prevArrow: (<SlideArrowPrev btnClassName={slider.sliderArrowPrev} />)
+  prevArrow: (<SlideArrowPrev btnClassName={slider.sliderArrowPrev} />),
+  nextArrow: (<SlideArrowNext btnClassName={slider.sliderArrowNext} />),
 };
 
 
