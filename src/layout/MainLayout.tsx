@@ -6,7 +6,7 @@ import * as mainStyle from './MainLayout.css.ts'
 
 const MainLayout = () => {
   return (
-    <main className='wrap'>
+    <main className='container'>
       <header className='header_wrap'>
         <h1 className='logo'></h1>
         <MenuList/>

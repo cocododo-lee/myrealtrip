@@ -5,13 +5,13 @@ import './slick-theme.min.css'
 import './slick.min.css'
 import clsx from 'clsx';
 
-interface IslideProps<T> {
+interface slideProps<T> {
   items:T[];
   settings:object;
   renderItem:(item:T, index:number) => React.ReactNode;
 }
 
-const Slide = ({items, settings, className, renderItem}: IslideProps) => {  
+const Slide = ({items, settings, className, renderItem}: slideProps) => {  
   return (
     <div className={clsx(className, 'slider-contianer')}>
       <Slider {...settings}>
