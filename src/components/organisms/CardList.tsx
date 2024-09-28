@@ -15,50 +15,41 @@ import ImgBarcelona from '../../assets/images/country/img_card_barcelona.webp';
 import ImgDanang from '../../assets/images/country/img_card_danang.webp';
 
 interface CardItem {
-  id:string;
   title: string;
   imgUrl: string;
   text : string;
 }
 
-const cardList:CardItem[]= [
+const CARD_LIST:CardItem[]= [
   {
-    id : 'carditem1',
     title : "제주",
     imgUrl : ImgJeju,
     text : '둘러보기',
   },{
-    id : 'carditem2',
     title : "파리",
     imgUrl : ImgParis,
     text : '둘러보기',
   },{
-    id : 'carditem3',
     title : "속초",
     imgUrl : ImgSokcho,
     text : '둘러보기',
   }, {
-    id : 'carditem4',
     title : "방콕",
     imgUrl : ImgBangkok,
     text : '둘러보기',
   },{
-    id : 'carditem5',
     title : "런던",
     imgUrl : ImgLondon,
     text : '둘러보기',
   },{
-    id : 'carditem6',
     title : "로마",
     imgUrl : ImgRoma,
     text : '둘러보기',
   },{
-    id : 'carditem7',
     title : "바르셀로나",
     imgUrl : ImgBarcelona,
     text : '둘러보기',
   },{
-    id : 'carditem8',
     title : "다낭",
     imgUrl : ImgDanang,
     text : '둘러보기',
@@ -68,21 +59,21 @@ const cardList:CardItem[]= [
 import { SlideArrowPrev } from '../atoms/slider/SlideArrowPrev.tsx';
 import { SlideArrowNext } from '../atoms/slider/SlideArrowNext.tsx';
 
-export const settings2= {
+export const slickCardOption= {
   speed: 500,
   infinite: true,
   slidesToShow: 4,
   slidesToScroll: 4,
-  prevArrow: (<SlideArrowPrev btnClassName={slider.sliderArrowPrev} />),
-  nextArrow: (<SlideArrowNext btnClassName={slider.sliderArrowNext} />),
+  prevArrow: (<SlideArrowPrev arrowStyle={slider.sliderArrowPrev} />),
+  nextArrow: (<SlideArrowNext arrowStyle={slider.sliderArrowNext} />),
 };
 
 
 const CardList = () => {
   return (
     <>
-      <Slide items={cardList} className={slider.sliderWrap} settings={settings2}  renderItem={(item,idx) => (
-        <Card key={item.id} id={item.id}
+      <Slide items={CARD_LIST} className={slider.sliderWrap} settings={slickCardOption} renderItem={(item,idx) => (
+        <Card
           top={
             <strong className={titleVariants.cardImgTitle}>{item.title}</strong>
           } 

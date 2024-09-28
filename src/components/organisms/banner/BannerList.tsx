@@ -12,46 +12,42 @@ import ImgMainBnr1_3 from '../../../assets/images/img_banner3.webp';
 
 
 interface BannerItem {
-  id:string;
   imgUrl: string;
   linkTo?:string;
   text?: string;
 }
 
-const bannerList:BannerItem[]= [
+const BANNER_LIST:BannerItem[]= [
   {
-    id : 'bnrMain1',
-    linkTo:'',
+    linkTo:'https://www.myrealtrip.com/promotions/tna-ush-202409',
     imgUrl : ImgMainBnr1_1,
     text : '둘러보기',
   },{
-    id : 'bnrMain2',
-    linkTo:'',
+    linkTo:'https://www.myrealtrip.com/promotions/checkout',
     imgUrl : ImgMainBnr1_2,
     text : '둘러보기',
   },{
-    id : 'bnrMain3',
-    linkTo:'',
+    linkTo:'https://www.myrealtrip.com/promotions/2024salefesta-chuseok',
     imgUrl : ImgMainBnr1_3,
     text : '둘러보기',
   },
 ];
 
-export const bnrSettings= {
+export const bannerSlideOption= {
   dots:true,
   speed: 500,
   infinite: true,
   slidesToShow: 1,
   slidesToScroll:1,
-  prevArrow: (<SlideArrowPrev btnClassName={slider.sliderArrowPrev} />),
-  nextArrow: (<SlideArrowNext btnClassName={slider.sliderArrowNext} />),
+  prevArrow: (<SlideArrowPrev arrowStyle={slider.sliderArrowPrev} />),
+  nextArrow: (<SlideArrowNext arrowStyle={slider.sliderArrowNext} />),
 };
 
 
 const BannerList = () => {
   return (
     <>
-      <Slide items={bannerList} className={slider.bannerSlider} settings={bnrSettings}  renderItem={(item,idx) => (
+      <Slide items={BANNER_LIST} className={slider.bannerSlider} settings={bannerSlideOption}  renderItem={(item,idx) => (
         <Link to={item.linkTo} className={banner.bnrlink}>
           <img src={item.imgUrl} alt ={item.text}/>
         </Link>

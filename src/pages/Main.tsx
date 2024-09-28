@@ -1,6 +1,7 @@
 import React from 'react'
 import CardList from '../components/organisms/CardList' 
 import BannerList from '../components/organisms/banner/BannerList'
+import ProductList from '../components/organisms/ProductList'
 
 const Main = () => {
   return (
@@ -10,6 +11,9 @@ const Main = () => {
       </section>
       <section>
         <BannerList/>
+      </section>
+      <section>
+        <ProductList sectiontitle={'전국 핫플 최저가 🎠'}/>
       </section>
     </>
   )

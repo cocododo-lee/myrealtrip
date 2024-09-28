@@ -26,3 +26,14 @@ export const badgeNew = style({
     letterSpacing: '-0.4px',
     whiteSpace: 'nowrap'
 })
+export const badgeRound = style({
+    display:'inline-flex',
+    alignContent:'center',
+    justifyContent:'center',
+    padding:'3px',
+    borderRadius:'3px',
+    fontSize:'12px',
+    fontWeight:'700',
+    color:'#f78000',
+    background:'#fff2c6',
+})

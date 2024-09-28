@@ -3,13 +3,13 @@ import React from 'react'
 import clsx from 'clsx';
 
 interface PrevArrowProps {
-    btnClassName?: string;
-    onClick?: React.MouseEventHandler<HTMLDivElement>;
+  arrowStyle?: string;
+    onClick?: ()=> void;
 }
 
-export const SlideArrowPrev = ({btnClassName, onClick }: PrevArrowProps) => {
+export const SlideArrowPrev = ({arrowStyle, onClick }: PrevArrowProps) => {
   return (
-    <button type='button' className={clsx(btnClassName)} onClick={onClick}>
+    <button type='button' className={clsx(arrowStyle)} onClick={onClick}>
         {/* <span></span> */}
     </button>
   )

@@ -4,17 +4,16 @@ import * as card from './Card.css.ts'
 import * as button from '../../atoms/button/Button.css.ts';
 import clsx from 'clsx';
 
-interface TitleProps {
-  id:string;
+interface CardProps {
   top?:ReactNode;
   hasIcon?: true; 
-  imgData?: ReactNode;
+  imgData?: React.ReactNode;
   text?: string;
 }
 
-const Card = ({top, imgData, text, id}:TitleProps):ReactElement => {
+const Card = ({top, imgData, text}:CardProps):ReactElement => {
   return (
-    <div id={id} className={card.cardItem}>
+    <div className={card.cardItem}>
         {top}
         {imgData}
         <Button variant='buttonLink' className={clsx(button.moreButton, card.cardMoreButton) }>

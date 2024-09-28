@@ -5,6 +5,22 @@ export const bnrlink = style({
     selectors:{
     }  
 })
+globalStyle(`.blind`, {
+    overflow:'hidden',
+    position:'absolute',
+    top:'-1px',
+    left:'-1px',
+    clipPath: 'circle(0)',
+    margin:'-1px',
+    width:'1px',
+    height:'1px',
+    fontSize:'1px',
+    lineHeight:'0',
+})
+
+globalStyle(`a`, {
+    textDecoration:'none'
+})
 
 globalStyle(`${bnrlink} img`, {
     width:'100%'
@@ -16,7 +32,6 @@ globalStyle('.slick-dots li', {
     width: '6px',
     height: '6px',
 })
-
 
 globalStyle('.slick-dots li button:before', {
     opacity: '0.4',
