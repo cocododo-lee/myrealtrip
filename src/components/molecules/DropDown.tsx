@@ -1,6 +1,6 @@
 import React from 'react'
-import MenuButton from '../atoms/button/MenuButton'
-import * as menuButton from '../atoms/button/MenuButton.css.ts'
+import MenuButton from '../atoms/button/menubutton/MenuButton.tsx'
+import * as styles from '../atoms/button/menubutton/MenuButton.css.ts'
 import menuGnbMore from '../../assets/images/common/bg_drop_down_arrow.svg';
 import icon10 from '../../assets/images/icon/icon_menu_10.webp';
 import icon11 from '../../assets/images/icon/icon_menu_11.webp';
@@ -17,10 +17,10 @@ interface DropMenuItem {
   hasIcon?: string;
   variant?:string;
   linkTo?: string;
-  menuText :string;
+  menuText?:string;
 }
 
-const DropMenuData:DropMenuItem[]= [
+const DROP_DOWN_MENU:DropMenuItem[]= [
   {
     hasIcon:icon10,
     variant: 'iconGNB',
@@ -70,12 +70,12 @@ const DropMenuData:DropMenuItem[]= [
 const DropDown = () => {
   return (
     <div>
-        <MenuButton className={menuButton.iconGnbMore} hasIcon={menuGnbMore}>더보기</MenuButton>
-        <div className={menuButton.dropDownMenu}>
+        <MenuButton className={styles.iconGnbMore} hasIcon={menuGnbMore}>더보기</MenuButton>
+        <div className={styles.dropDownMenu}>
             {
-              DropMenuData.map((el,index) => {
+              DROP_DOWN_MENU.map((el,index) => {
                 return (
-                  <MenuButton key={index} className={menuButton.iconGnb} hasIcon={el.hasIcon} variant={el.variant}>{el.menuText}</MenuButton>
+                  <MenuButton key={index} className={styles.iconGnb} hasIcon={el.hasIcon} variant={el.variant}>{el.menuText}</MenuButton>
                 )
               })
             }

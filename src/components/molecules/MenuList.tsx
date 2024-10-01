@@ -1,22 +1,22 @@
 import React, { Children } from 'react'
-import MenuButton from '../atoms/button/MenuButton'
-import * as menuButton from '../atoms/button/MenuButton.css.ts'
+import MenuButton from '../atoms/button/menubutton/MenuButton.tsx'
+import * as styles from '../atoms/button/menubutton/MenuButton.css.ts'
 import {typographVariants} from '../../types/typography.css.ts';
 import icon1 from '../../assets/images/icon/icon_menu_1.webp'
 import icon2 from '../../assets/images/icon/icon_menu_2.webp'
 
 type Variant = keyof typeof typographVariants;
 
-export interface IMenuListProps {
+export interface MenuListProps {
   id: string;
   isNew?: boolean;
   hasIcon?: string;
   linkTo?: string;
-  text : string;
+  text?: string;
   variant?: Variant; 
 }
 
-const menuList:IMenuListProps[]= [
+const MENU_LIST:MenuListProps[]= [
   {
     isNew: true,
     id:'menuList1',
@@ -38,9 +38,9 @@ const menuList:IMenuListProps[]= [
 const MenuList = () => {
   return (
     <nav>
-        { menuList.map((list) => {
+        { MENU_LIST.map((list) => {
           return (
-              <MenuButton {...list} key={list.id} className={menuButton.iconGnb}>
+              <MenuButton {...list} key={list.id} className={styles.iconGnb}>
                 {list.text}
               </MenuButton>
           )})

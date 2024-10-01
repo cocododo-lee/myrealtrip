@@ -39,7 +39,7 @@ export const body = style({
     height: '145px',
     boxSizing:'border-box'
 });
-export const category = style({
+export const categoryWrap = style({
     overflow: 'hidden',
     display:'block',
     maxWidth: '100%',
@@ -48,11 +48,11 @@ export const category = style({
     color: '#848c94',
     lineHeight:'1',
 });
-export const categoryTxt = style({
+export const category = style({
     marginRight:'5px',
     fontStyle:'normal',
 });
-export const categoryCity = style({
+export const city = style({
     marginLeft:'5px',
     fontStyle:'normal',
 });

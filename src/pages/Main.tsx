@@ -13,7 +13,7 @@ const Main = () => {
         <BannerList/>
       </section>
       <section>
-        <ProductList sectiontitle={'전국 핫플 최저가 🎠'}/>
+        <ProductList title={'전국 핫플 최저가 🎠'}/>
       </section>
     </>
   )

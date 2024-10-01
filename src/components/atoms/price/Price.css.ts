@@ -10,7 +10,7 @@ export const priceFix = style({
     fontSize: '12px',
     lineHeight:'1',
 })
-export const FinalPrice = style({
+export const total = style({
     fontSize: '14px',
     fontWeight: '600',
     color: '#666d75',

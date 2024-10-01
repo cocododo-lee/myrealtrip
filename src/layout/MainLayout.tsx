@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import {Outlet} from 'react-router-dom';
 import MenuList from '../components/molecules/MenuList'
 import DropDown from '../components/molecules/DropDown'
-import * as mainStyle from './MainLayout.css.ts'
+import * as styles from './MainLayout.css.ts'
 
 const MainLayout = () => {
   return (
@@ -13,7 +13,7 @@ const MainLayout = () => {
         <DropDown/>
       </header>
       <article className='container'>
-        <div className={mainStyle.contents}>
+        <div className={styles.contents}>
           <Outlet/>
         </div>
       </article>

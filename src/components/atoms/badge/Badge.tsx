@@ -1,9 +1,9 @@
 import React, { PropsWithChildren } from 'react'
-import * as  badges from './Badge.css.ts'
+import * as  styles from './Badge.css.ts'
 import {PaletteTypes} from '../../../types/palette.ts'
 import clsx from 'clsx'
 
-type Variant = keyof typeof badges;
+type Variant = keyof typeof styles;
 
 interface BadgeStyle {
   hasIcon?: true;
@@ -13,7 +13,7 @@ interface BadgeStyle {
 }
 
 const Badge = ({className, variant, children}:PropsWithChildren<BadgeStyle>) => {
-const variantClass = variant ? badges[variant] :undefined;
+const variantClass = variant ? styles[variant] :undefined;
    return (
     <span className={clsx(className, variantClass)}>
         {children}

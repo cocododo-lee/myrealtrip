@@ -1,9 +1,9 @@
 import React from 'react'
 import Card from '../molecules/card/Card.tsx';
-import Slide from '../atoms/slider/Slide.tsx';
-import { titleVariants } from '../atoms/text/Title.css.ts'
-import * as  card from '../molecules/card/Card.css.ts'
-import * as  slider from '../atoms/slider/Slider.css.ts'
+import Slide from '../atoms/slider/Slider.tsx';
+import { titleVariants } from '../atoms/title/Title.css.ts'
+import * as  stylesCard from '../molecules/card/Card.css.ts'
+import * as  StylesSlick from '../atoms/slider/Slider.css.ts'
 //img
 import ImgJeju from '../../assets/images/country/img_card_jeju.webp';
 import ImgParis from '../../assets/images/country/img_card_paris.webp';
@@ -56,29 +56,29 @@ const CARD_LIST:CardItem[]= [
   },
 ];
 
-import { SlideArrowPrev } from '../atoms/slider/SlideArrowPrev.tsx';
-import { SlideArrowNext } from '../atoms/slider/SlideArrowNext.tsx';
+import { SlideArrowPrev } from '../atoms/button/slide/prev/PrevButton.tsx';
+import { SlideArrowNext } from '../atoms/button/slide/next/NextButton.tsx';
 
 export const slickCardOption= {
   speed: 500,
   infinite: true,
   slidesToShow: 4,
   slidesToScroll: 4,
-  prevArrow: (<SlideArrowPrev arrowStyle={slider.sliderArrowPrev} />),
-  nextArrow: (<SlideArrowNext arrowStyle={slider.sliderArrowNext} />),
+  prevArrow: (<SlideArrowPrev arrowStyle={StylesSlick.sliderArrowPrev} />),
+  nextArrow: (<SlideArrowNext arrowStyle={StylesSlick.sliderArrowNext} />),
 };
 
 
 const CardList = () => {
   return (
     <>
-      <Slide items={CARD_LIST} className={slider.sliderWrap} settings={slickCardOption} renderItem={(item,idx) => (
+      <Slide items={CARD_LIST} className={StylesSlick.sliderWrap} settings={slickCardOption} renderItem={(item,idx) => (
         <Card
           top={
             <strong className={titleVariants.cardImgTitle}>{item.title}</strong>
           } 
-          imgData={
-            <div className={card.cardIntro} style={{background:`url(${item.imgUrl}) no-repeat left top / cover` }}></div>
+          node={
+            <div className={stylesCard.cardIntro} style={{background:`url(${item.imgUrl}) no-repeat left top / cover` }}></div>
           }
           text = {item.text}
           />
