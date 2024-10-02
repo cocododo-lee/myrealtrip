@@ -4,12 +4,11 @@ import * as styles from './StarRating.css.ts'
 import ProductStar from '../../../assets/svg/icon_rating_star.svg?react'
 import ProductStarFill from '../../../assets/svg/icon_rating_star_fill.svg?react'
 
-// const [rating, setRating] = useState(0)
-
 interface RatingProps {
   className?:string;
   count:number;
 }
+
 const StarRating = ({...props}:RatingProps) => {
   return (
     <div className={props.className}>

@@ -6,7 +6,6 @@ import clsx from 'clsx';
 interface BookmarkProps {
     className?: string;
 }
-
 const Bookmark = ({...props}:BookmarkProps) => {
   return (
     <>

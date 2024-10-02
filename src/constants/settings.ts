@@ -5,7 +5,3 @@ export const defaultSlickOption = {
     slidesToShow: 4,
     slidesToScroll: 4,
 };
-
-export const slickCardOption = {
-};
-/* - */

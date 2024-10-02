@@ -59,7 +59,7 @@ const CARD_LIST:CardItem[]= [
 import { SlideArrowPrev } from '../atoms/button/slide/prev/PrevButton.tsx';
 import { SlideArrowNext } from '../atoms/button/slide/next/NextButton.tsx';
 
-export const slickCardOption= {
+export const SlickOption= {
   speed: 500,
   infinite: true,
   slidesToShow: 4,
@@ -72,7 +72,7 @@ export const slickCardOption= {
 const CardList = () => {
   return (
     <>
-      <Slide items={CARD_LIST} className={StylesSlick.sliderWrap} settings={slickCardOption} renderItem={(item,idx) => (
+      <Slide items={CARD_LIST} className={StylesSlick.sliderWrap} settings={SlickOption} renderItem={(item,idx) => (
         <Card
           top={
             <strong className={titleVariants.cardImgTitle}>{item.title}</strong>
