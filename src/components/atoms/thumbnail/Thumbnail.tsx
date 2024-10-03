@@ -1,13 +1,13 @@
 import React from 'react'
 import * as styles from './Thumbnail.css.ts';
 
-interface ThumnailProps {
+interface ThumbnailProps {
     className?:string;
     imgUrl: string;
     imgAlt?: string;
 }
 
-const Thumnail = ({ ...props }:ThumnailProps) => {
+const Thumbnail  = ({ ...props }:ThumbnailProps) => {
   return (
     <div className={props.className}>
         <img src={props.imgUrl} alt={props.imgAlt}/>
@@ -15,4 +15,4 @@ const Thumnail = ({ ...props }:ThumnailProps) => {
   )
 }
 
-export default Thumnail
+export default Thumbnail

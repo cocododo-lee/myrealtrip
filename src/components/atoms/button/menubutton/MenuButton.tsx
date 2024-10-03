@@ -1,4 +1,4 @@
-import React, {  PropsWithChildren, } from 'react'
+import React, {  PropsWithChildren } from 'react'
 import { NavLink } from 'react-router-dom'
 import {typographVariants} from '../../../../types/typography.css.ts';
 import * as styles from './MenuButton.css.ts'
@@ -10,7 +10,7 @@ interface MenuButtonStyled extends Omit<MenuListProps, 'id'>{
   className?: string;
 }
 
-const MenuButton = ({...props}:PropsWithChildren<MenuButtonStyled>): JSX.Element | null => { 
+const MenuButton = ({...props}:PropsWithChildren<MenuButtonStyled>) => { 
   if (!props.linkTo) {
     return null; // linkTo 값이 없으면 아무것도 렌더링하지 않음
   }
