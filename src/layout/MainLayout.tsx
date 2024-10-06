@@ -3,12 +3,14 @@ import {Outlet} from 'react-router-dom';
 import MenuList from '../components/molecules/MenuList'
 import DropDown from '../components/molecules/DropDown'
 import * as styles from './MainLayout.css.ts'
+import Search from '../components/atoms/iunput/Search.tsx';
 
 const MainLayout = () => {
   return (
     <main className='container'>
       <header className='header_wrap'>
         <h1 className='logo'></h1>
+        <Search/>
         <MenuList/>
         <DropDown/>
       </header>
