@@ -1,9 +1,12 @@
 import React from 'react'
-import * as SearchStyles from './SearchInput.css.ts'
-import clsx from 'clsx';
+
 import { SearchIuputProps } from '../../molecules/Serach.tsx';
 
+
 const SearchInput = ({searchWord, onChange, onClear, placeholder}:SearchIuputProps) => {
+    const handlerChange= (e: React.ChangeEvent<HTMLInputElement>) => {
+        onChange(e.target.value);
+      }
     return (
         <div>
             <div className="searchWrap">
@@ -12,7 +15,7 @@ const SearchInput = ({searchWord, onChange, onClear, placeholder}:SearchIuputPro
                         type="text" 
                         className='input inputSearch' 
                         value={searchWord} 
-                        onChange={onChange}
+                        onChange={handlerChange}
                         placeholder={placeholder}
                     />
                     <button type='submit' className='btnSearch'>검색</button>
@@ -20,19 +23,6 @@ const SearchInput = ({searchWord, onChange, onClear, placeholder}:SearchIuputPro
                         searchWord && 
                         <button type='button' className='btnClear' onClick={onClear}>초기화</button>
                     }
-                    
-                </div>
-                <div className='searchAutoComplete'>
-                    <ul className='completeList'>
-                        {
-                            searchWord &&
-                            searchList?.map((items)=> (
-                            <li className='completeItem' key={items.id}>
-                                <a href="" className={clsx(SearchStyles.link, items.countries && `typeMap`)}>{items.word}</a>
-                            </li>
-                            ))
-                        }
-                    </ul>
                 </div>
             </div>
         </div>
