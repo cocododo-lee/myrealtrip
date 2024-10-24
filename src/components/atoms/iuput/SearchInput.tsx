@@ -1,12 +1,10 @@
-import React from 'react'
-
-import { SearchIuputProps } from '../../molecules/Serach.tsx';
-
+import React from "react";
+import { SearchIuputProps } from "../../molecules/Serach";
 
 const SearchInput = ({searchWord, onChange, onClear, placeholder}:SearchIuputProps) => {
-    const handlerChange= (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handlerChange = (e:React.ChangeEvent<HTMLInputElement>) => {
         onChange(e.target.value);
-      }
+    };
     return (
         <div>
             <div className="searchWrap">
