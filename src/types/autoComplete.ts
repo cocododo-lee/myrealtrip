@@ -1,7 +1,7 @@
 
 export interface AutoCompleteProps {
-    id:string;
-    word:string;
+    id?:string;
+    word?:string;
     countries?:boolean;
     countriesUrl?:string;
 }

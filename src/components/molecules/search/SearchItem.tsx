@@ -1,7 +1,7 @@
 import React from 'react'
 import clsx from 'clsx'
-import { AutoCompleteProps } from '../../types/autoComplete'
-import * as SearchStyles from '../atoms/iuput/SearchInput.css'
+import { AutoCompleteProps } from '../../../types/autoComplete'
+import * as SearchStyles from '../../atoms/iuput/SearchInput.css'
 
 const SearchItem = ({...props}:AutoCompleteProps) => {
   return (

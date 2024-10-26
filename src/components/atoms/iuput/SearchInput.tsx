@@ -1,10 +1,8 @@
 import React from "react";
-import { SearchIuputProps } from "../../molecules/Serach";
+import { SearchIuputProps } from "../../molecules/search/Serach";
 
 const SearchInput = ({searchWord, onChange, onClear, placeholder}:SearchIuputProps) => {
-    const handlerChange = (e:React.ChangeEvent<HTMLInputElement>) => {
-        onChange(e.target.value);
-    };
+  
     return (
         <div>
             <div className="searchWrap">
@@ -13,7 +11,7 @@ const SearchInput = ({searchWord, onChange, onClear, placeholder}:SearchIuputPro
                         type="text" 
                         className='input inputSearch' 
                         value={searchWord} 
-                        onChange={handlerChange}
+                        onChange={(e) => onChange && onChange(e.target.value)}
                         placeholder={placeholder}
                     />
                     <button type='submit' className='btnSearch'>검색</button>

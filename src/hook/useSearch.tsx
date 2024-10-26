@@ -6,7 +6,7 @@ interface SearchProps {
 
 const useSearch = ({data} : SearchProps) => {
     const [searchWord, setSearchWord] = useState('');
-    const searchResults = data?.filter((items) => items.word.includes(searchWord))
+    const searchResult = data?.filter((items) => items.word?.includes(searchWord))
         
     const handlerChange = (value:string) =>{
         setSearchWord(value);
@@ -20,7 +20,7 @@ const useSearch = ({data} : SearchProps) => {
         searchWord, 
         handlerChange,
         handlerDelete,
-        searchResults,
+        searchResult,
     }
 }
 

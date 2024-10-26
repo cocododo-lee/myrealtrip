@@ -3,7 +3,7 @@ import {Outlet} from 'react-router-dom';
 import MenuList from '../components/molecules/MenuList'
 import DropDown from '../components/molecules/DropDown'
 import * as styles from './MainLayout.css.ts'
-import Search from '../components/molecules/Serach';
+import Search from '../components/molecules/search/Serach.tsx';
 
 const MainLayout = () => {
   return (
