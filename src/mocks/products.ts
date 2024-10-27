@@ -1,4 +1,5 @@
 import { ProductProps } from "../types/product";
+import * as stylesBadge from '../components/atoms/badge/Badge.css.ts'
 import prodThumnail1 from '../assets/images/img_product_ex.webp'
 import prodThumnail2 from '../assets/images/img_product_ex2.webp'
 import prodThumnail3 from '../assets/images/img_product_ex3.webp'
@@ -12,7 +13,8 @@ export const PRODUCT_LIST_R:ProductProps[]=[
       bookmark : false,
       // bookmarkStyle:'productType',
       imgAlt:'',
-      badgeStyle:'badgeRound',
+      badgeStyle:stylesBadge.badgeRound,
+      badgeVariant:stylesBadge.prouctVarint,
       badgeText : '즉시확정',
       category:'티켓',
       city:'서울',
@@ -29,7 +31,8 @@ export const PRODUCT_LIST_R:ProductProps[]=[
       imgAlt:'',
       category:'티켓',
       city:'서울',
-      badgeStyle:'badgeRound',
+      badgeStyle:stylesBadge.badgeRound,
+      badgeVariant:stylesBadge.prouctVarint,
       badgeText : '즉시확정',
       reviewer : 999,
       discount : 100000,
@@ -44,7 +47,8 @@ export const PRODUCT_LIST_R:ProductProps[]=[
       imgAlt:'',
       category:'티켓',
       city:'서울',
-      badgeStyle:'badgeRound',
+      badgeStyle:stylesBadge.badgeRound,
+      badgeVariant:stylesBadge.prouctVarint,
       badgeText : '즉시확정',
       reviewer : 999,
       discount : 100000,
@@ -59,7 +63,8 @@ export const PRODUCT_LIST_R:ProductProps[]=[
       imgAlt:'',
       category:'티켓',
       city:'경기도',
-      badgeStyle:'badgeRound',
+      badgeStyle:stylesBadge.badgeRound,
+      badgeVariant:stylesBadge.prouctVarint,
       badgeText:'즉시확정',
       reviewer : 999,
       discount : 100000,

@@ -37,3 +37,9 @@ export const badgeRound = style({
     color:'#f78000',
     background:'#fff2c6',
 })
+
+export const prouctVarint = style({
+    position:'absolute',
+    top:'115px',
+    right:'5px',
+})
