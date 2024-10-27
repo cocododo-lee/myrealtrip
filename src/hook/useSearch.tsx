@@ -8,7 +8,7 @@ const useSearch = ({data} : SearchProps) => {
     const [searchWord, setSearchWord] = useState('');
     const searchResult = data?.filter((items) => items.word?.includes(searchWord))
         
-    const handlerChange = (value:string) =>{
+    const handleChange = (value:string) =>{
         setSearchWord(value);
     };
         
@@ -18,7 +18,7 @@ const useSearch = ({data} : SearchProps) => {
     
     return {
         searchWord, 
-        handlerChange,
+        handleChange,
         handlerDelete,
         searchResult,
     }

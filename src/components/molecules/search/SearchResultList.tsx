@@ -1,11 +1,13 @@
 import React from 'react'
 import SearchItem from './SearchItem'
+import { AutoCompleteProps } from '../../../types/autoComplete';
 interface SearchResultProps{
-    searchWord?:string;
-    searchResult?:object[];
+    searchWord:string;
+    //searchResult?:object[]; ✏️정확한 타입표현하기 
+    searchResult?:AutoCompleteProps[]; 
 }
 
-const SearchResultList = ({...props}:SearchResultProps) => {
+const SearchResultList = (props:SearchResultProps) => {
   return (
     <div className='searchAutoComplete'>
         <ul className='completeList'>
