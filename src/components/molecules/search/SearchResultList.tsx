@@ -8,12 +8,13 @@ interface SearchResultProps{
 }
 
 const SearchResultList = (props:SearchResultProps) => {
+  const {searchWord, searchResult} = props;
   return (
     <div className='searchAutoComplete'>
         <ul className='completeList'>
             {
-                  props.searchWord &&
-                  props.searchResult?.map((items)=> (
+                  searchWord &&
+                  searchResult?.map((items)=> (
                     // <li className='completeItem'>
                     //   <a href="" className={clsx(SearchStyles.link, items.countries && `typeMap`)}>{items.word}</a>
                     

@@ -3,11 +3,6 @@ import { SearchIuputProps } from "../../molecules/search/Serach";
 import History from "../history/History";
 
 const SearchInput = ({searchWord, historyView,  onFocus, onChange, onClear, placeholder}:SearchIuputProps) => {
-    const handleInputChange  = (e:React.ChangeEvent<HTMLInputElement>) => {
-        if(onChange) {
-            onChange(e.target.value);
-        }
-    }
     return (
         <>
             <div className="searchWrap">
@@ -18,7 +13,7 @@ const SearchInput = ({searchWord, historyView,  onFocus, onChange, onClear, plac
                         value={searchWord}
                         onFocus={() => onFocus?.(true)}
                         onBlur={()=> onFocus?.(false)}
-                        onChange={handleInputChange}
+                        onChange={(e)=>onChange?.(e.target.value)}
                         placeholder={placeholder}
                     />
                     <button type='submit' className='btnSearch'>검색</button>
