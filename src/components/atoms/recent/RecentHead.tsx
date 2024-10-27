@@ -1,14 +1,14 @@
 import React from 'react'
 import DeleteButton from '../button/delete/DeleteButton'
 
-interface HistoryHeadProps {
+interface RecentHeadProps {
     title : string;
 }
 
-const HistoryHead = ({...props}:HistoryHeadProps) => {
+const HistoryHead = ({...props}:RecentHeadProps) => {
   return (
     <>
-        <strong className='historyTitle'>{props.title}</strong>
+        <strong className='RecentTitle'>{props.title}</strong>
         <DeleteButton className='btnDeleteLink'>전체삭제</DeleteButton>
     </>
   )

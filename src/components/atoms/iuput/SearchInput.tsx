@@ -1,8 +1,8 @@
 import React from "react";
 import { SearchIuputProps } from "../../molecules/search/Serach";
-import History from "../history/History";
+// import History from "../history/History";
 
-const SearchInput = ({searchWord, historyView,  onFocus, onChange, onClear, placeholder}:SearchIuputProps) => {
+const SearchInput = ({searchWord, onFocus, onBlur, onChange, onClear, placeholder}:SearchIuputProps) => {
     return (
         <>
             <div className="searchWrap">
@@ -11,8 +11,8 @@ const SearchInput = ({searchWord, historyView,  onFocus, onChange, onClear, plac
                         type="text" 
                         className='input inputSearch' 
                         value={searchWord}
-                        onFocus={() => onFocus?.(true)}
-                        onBlur={()=> onFocus?.(false)}
+                        onFocus={() => onFocus?.(true)} 
+                        onBlur={()=> onBlur?.(true)}
                         onChange={(e)=>onChange?.(e.target.value)}
                         placeholder={placeholder}
                     />
@@ -23,10 +23,6 @@ const SearchInput = ({searchWord, historyView,  onFocus, onChange, onClear, plac
                     }
                 </div>
             </div>
-            { !(searchWord) && 
-                historyView &&  
-                <History/> 
-            }
         </>
     )
 }

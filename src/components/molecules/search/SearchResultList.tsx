@@ -13,13 +13,10 @@ const SearchResultList = (props:SearchResultProps) => {
     <div className='searchAutoComplete'>
         <ul className='completeList'>
             {
-                  searchWord &&
-                  searchResult?.map((items)=> (
-                    // <li className='completeItem'>
-                    //   <a href="" className={clsx(SearchStyles.link, items.countries && `typeMap`)}>{items.word}</a>
-                    
-                    <SearchItem key={items.id}  {...items}/>
-                  ))
+              searchWord &&
+              searchResult?.map((items)=> (
+                <SearchItem key={items.id}  {...items}/>
+              ))
             }
         </ul>
     </div>

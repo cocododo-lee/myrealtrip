@@ -1,6 +1,6 @@
 import { style } from "@vanilla-extract/css";
 
-export const historyWrap = style({
+export const RecentWrap = style({
     zIndex:10,
     position:'absolute',
     top:'40px',
