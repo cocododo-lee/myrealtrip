@@ -1,27 +1,33 @@
 import React, { useEffect, useState } from 'react'
 
+export interface RecentProps {
+  keywords:string[];
+  onEnter: (keyword: string) => void;
+  onRemove: (keyword: string) => void;
+  onClear: () => void;
+}
+
 const useRecent = () => {
-    const [keywords, setKeyword] = useState(
-      JSON.parse(localStorage.getItem('keywords') || '[]')
-    );
+
+  const [keywords, setKeywords] = useState<string[]>([]); 
   
     useEffect(() => {
       localStorage.setItem('keywords', JSON.stringify(keywords))
     }, [keywords])
     
     const handleEnter= (value:string) => {
-      setKeyword([value, ...keywords])
+      setKeywords([value, ...keywords])
     }
 
     const handleRemove= (id) => {
       const removeDataList =  keywords.filter((keyword:string) => {
         return keyword.id != id;
       })
-      setKeyword(removeDataList);
+      setKeywords(removeDataList);
     }
 
     const handleClear= () => {
-      setKeyword([''])
+      setKeywords([''])
     }
 
 

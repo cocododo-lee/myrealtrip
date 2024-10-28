@@ -13,12 +13,12 @@ export interface SearchIuputProps{
   onClear:()=>void;
   onBlur:(value:boolean) => void;
   onFocus:(value:boolean)=>void;
-  onEnter?:(id :string) => void;
-  placeholder : string;
+  onEnter: (value: string) => void;
+  placeholder : string;  
 } 
 const Serach = () => {
   const { searchWord, handleChange, handleDelete, searchResult} = useSearch({data:AUTO_COMPLETE_DATA});
-  const { keywords, handleEnter, handleRemove, handleClear} = useRecent();
+  const { keywords, handleEnter } = useRecent();
   const [isFocused, setIsFocused] = useState(false);
 
   const handleFocus = () => {
@@ -29,7 +29,7 @@ const Serach = () => {
     setIsFocused(false);
   };
   const handelEnter = () => {
-    // setIsFocused(false);
+    handleEnter(searchWord)
   };
 
   
@@ -41,7 +41,7 @@ const Serach = () => {
         
         { !(searchWord) && 
           isFocused &&
-          <Recent keywords={keywords} onEnter={handleEnter} onRemove={handleRemove} onClear={handleClear} />
+          <Recent keywords={keywords} />
         }
     </div>
   )
