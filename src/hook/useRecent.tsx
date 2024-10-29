@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react'
 
 export interface RecentProps {
   keywords:string[];
-  onEnter: (keyword: string) => void;
+  onKeyDown: (keyword: string) => void;
   onRemove: (keyword: string) => void;
   onClear: () => void;
+  onClick: ( keywords:string) => void;
 }
 
 const useRecent = () => {
@@ -13,9 +14,16 @@ const useRecent = () => {
   
     useEffect(() => {
       localStorage.setItem('keywords', JSON.stringify(keywords))
+      console.log(localStorage.getItem('keywords'))
     }, [keywords])
     
-    const handleEnter= (value:string) => {
+   
+    
+    const handleClick = (value:string) => {
+      setKeywords([value, ...keywords])
+    }
+ 
+    const handleKeyDown = (value:string) => {
       setKeywords([value, ...keywords])
     }
 
@@ -33,7 +41,8 @@ const useRecent = () => {
 
   return {
     keywords,
-    handleEnter,
+    handleClick,
+    handleKeyDown,
     handleRemove,
     handleClear,
   }
