@@ -1,21 +1,23 @@
 import React from "react";
-import { SearchIuputProps } from "../../molecules/search/Serach";
+import { SearchInputProps } from "../../molecules/search/Serach";
 
-const SearchInput = ({searchWord, onClick, onKeyDown, onFocus, onBlur, onChange, onClear, placeholder}:SearchIuputProps) => {
-    // 클로드의 도움을 받았습니다 
+const SearchInput = ({searchWord, onClick, onKeyDown, onFocus, onChange, onClear, placeholder}:SearchInputProps) => {
     const handleClick = (e:React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
-        localStorage.setItem('keywords', searchWord);
-        onClick(searchWord);
+        if(searchWord !== '') {
+            onClick(searchWord);
+            onClear();
+        }
     }
     
     const handleKeyDown = (e:React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'Enter') {
             e.preventDefault();
-            localStorage.setItem('keywords', searchWord);
-            onKeyDown?.(searchWord);
+            if(searchWord !== '') {
+                onKeyDown?.(searchWord);
+            }
         }
-      };
+    };
   
     
     return (
@@ -27,7 +29,6 @@ const SearchInput = ({searchWord, onClick, onKeyDown, onFocus, onBlur, onChange,
                         className='input inputSearch' 
                         value={searchWord}
                         onFocus={() => onFocus?.(true)} 
-                        onBlur={()=> onBlur?.(true)}
                         onChange={(e)=>onChange?.(e.target.value)}
                         onKeyDown={handleKeyDown}
                         placeholder={placeholder}

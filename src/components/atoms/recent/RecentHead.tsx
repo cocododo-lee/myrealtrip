@@ -3,13 +3,14 @@ import DeleteButton from '../button/delete/DeleteButton'
 
 interface RecentHeadProps {
     title : string;
+    onClear: () => void;
 }
 
-const HistoryHead = ({...props}:RecentHeadProps) => {
+const HistoryHead = ({title,onClear}:RecentHeadProps) => {
   return (
     <>
-        <strong className='RecentTitle'>{props.title}</strong>
-        <DeleteButton className='btnDeleteLink'>전체삭제</DeleteButton>
+        <strong className='RecentTitle'>{title}</strong>
+        <DeleteButton className='btnDeleteLink' onClick={onClear}>전체삭제</DeleteButton>
     </>
   )
 }
