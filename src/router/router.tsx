@@ -6,6 +6,7 @@ import Main from "../pages/Main";
 import Sub1 from "../pages/Sub1";
 import Hotel from "../pages/Hotel";
 import Mypack from "../pages/Mypack";
+import Search from "../pages/SearchResult";
 
 const routes:RouteObject[] = [
     {
@@ -29,6 +30,9 @@ const routes:RouteObject[] = [
                     },{
                         path:'/hotel',
                         element:<Hotel/>
+                    },{
+                        path:'/search',
+                        element:<Search/>
                     },
                 ]
             },

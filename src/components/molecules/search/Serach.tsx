@@ -22,7 +22,7 @@ export interface SearchInputProps{
 const Serach = () => {
   const [isFocus, setIsFocus] = useState<boolean>(false);
   const searchWrapperRef  = useRef<HTMLDivElement>(null)
-  const { searchWord, handleChange, handleDelete,searchResult} = useSearch({data:AUTO_COMPLETE_DATA});
+  const { searchWord, handleChange, handleDelete,handleClickRecent, searchResult} = useSearch({data:AUTO_COMPLETE_DATA});
   const { keywords, handleClick, handleKeyDown, handleClearClick} = useRecent();
 
   useEffect(() => {
@@ -47,13 +47,13 @@ const Serach = () => {
   const handleBlur = () => {
     setIsFocus(false);
   };
-
+ 
 
 
   return (
     <div className={SearchStyles.SearchWrap} ref={searchWrapperRef}>
         <SearchInput searchWord={searchWord} onFocus={handleFocus} onChange={handleChange} onClick={handleClick} onClear={handleDelete} onKeyDown={handleKeyDown} placeholder={`도시나 상품을 검색해보세요`}/>
-        <SearchResultList searchWord={searchWord} searchResult={searchResult} />
+        <SearchResultList searchWord={searchWord} searchResult={searchResult}/>
         
         { !(searchWord) && isFocus && 
           <Recent keywords={keywords} onClear={handleClearClick} />

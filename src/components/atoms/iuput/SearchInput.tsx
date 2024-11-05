@@ -1,12 +1,17 @@
 import React from "react";
 import { SearchInputProps } from "../../molecules/search/Serach";
+import { useNavigate } from "react-router-dom";
 
 const SearchInput = ({searchWord, onClick, onKeyDown, onFocus, onChange, onClear, placeholder}:SearchInputProps) => {
+    
+    const navigate = useNavigate();
+
     const handleClick = (e:React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
         if(searchWord !== '') {
             onClick(searchWord);
             onClear();
+            navigate(`/search?keywords=${encodeURIComponent(searchWord)}`);
         }
     }
     
@@ -18,12 +23,21 @@ const SearchInput = ({searchWord, onClick, onKeyDown, onFocus, onChange, onClear
             }
         }
     };
+
+    const handleSubmit = (e:React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        // if(searchWord.trim()){ 
+        if(searchWord !== '') {
+            navigate(`/search?keywords=${encodeURIComponent(searchWord)}`);
+        }
+    }
   
     
     return (
         <>
             <div className="searchWrap">
                 <div className="searchBox">
+                    <form onSubmit={handleSubmit} >
                     <input 
                         type="text" 
                         className='input inputSearch' 
@@ -38,6 +52,7 @@ const SearchInput = ({searchWord, onClick, onKeyDown, onFocus, onChange, onClear
                         searchWord && 
                         <button type='button' className='btnClear' onClick={onClear}>초기화</button>
                     }
+                    </form>
                 </div>
             </div>
         </>

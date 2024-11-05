@@ -6,7 +6,6 @@ export interface RecentProps {
   onRemove: (keyword: string) => void;
   onClear: () => void;
   onClick: ( keywords:string) => void;
-  
 }
 
 const useRecent = () => {
@@ -63,8 +62,7 @@ const useRecent = () => {
       alert('삭제할 최근 검색 내역이 없습니다.😭')
     }
   } 
-  
-
+   
   
   return {
     keywords,
