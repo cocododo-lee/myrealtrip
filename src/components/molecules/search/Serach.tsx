@@ -54,7 +54,7 @@ const Serach = () => {
         <SearchResultList searchWord={searchWord} searchResult={searchResult} onClear={handleDelete} onBlur={handleBlur}/>
         
         { !(searchWord) && isFocus && 
-          <Recent keywords={keywords} onClear={handleClearClick}/>
+          <Recent keywords={keywords} onClear={handleClearClick} onClose={handleBlur}/>
         }
     </div>
   )
