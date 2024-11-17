@@ -1,18 +1,28 @@
-import React from 'react'
-import * as styles from '../styles/styles.css.ts'; 
-import * as buttons from '../styles/buttons.css.ts'; 
-import Buttons from '../components/atoms/Buttons.tsx';
+import React, { useEffect, useState } from 'react'
+import {Outlet} from 'react-router-dom';
+import MenuList from '../components/molecules/MenuList'
+import DropDown from '../components/molecules/DropDown'
+import * as styles from './MainLayout.css.ts'
+import Search from '../components/molecules/search/Serach.tsx';
 
-const MainLayout:React.FC  = () => {
+const MainLayout = () => {
   return (
-    <div>
-      <div className={styles.container}>
-          <h1 className={styles.exampleH1}>Layout</h1>
-          <h2>Vite + React + Typescript + MSW + zustand + vanilla-extract</h2>
-      </div>
-      <Buttons variant="h1" children='버튼제작1' className={buttons.buttonRound}/>
-      <Buttons variant="h2" children='버튼제작2' className={buttons.buttonRound}/>
-   </div>
+    <main className='container'>
+      <header className='header_wrap'>
+        <h1 className='logo'></h1>
+        <Search/>
+        <MenuList/>
+        <DropDown/>
+      </header>
+      <article className='container'>
+        <div className={styles.contents}>
+          <Outlet/>
+        </div>
+      </article>
+      <footer className='footer_wrap'>
+
+      </footer>
+    </main>
   )
 }
 

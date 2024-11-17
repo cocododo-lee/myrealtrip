@@ -5,7 +5,7 @@ import router from "./router/router";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 const queryClient = new QueryClient();
 
-const App:React.FC = ()=> {
+const App = ()=> {
   return (
     <>
     <QueryClientProvider client={queryClient}>
