@@ -14,7 +14,7 @@ const useSearch = ({data} : SearchProps) => {
     //     setIsFocused(true);
     //   };
     
-    //   const handleBlur = () => {
+    //   const handleCloseLayer = () => {
     //     setIsFocused(false);
     //   };
   
@@ -22,7 +22,9 @@ const useSearch = ({data} : SearchProps) => {
         setSearchWord(value);
     };
     const handleDelete= () => {
-        setSearchWord('');
+        if(searchWord !== '') {
+            setSearchWord('');
+        }
     }
     
     return {

@@ -23,7 +23,7 @@ const useRecent = () => {
 
   const [keywords, setKeywords] = useState<string[]>(getInitialkeywords);   
   useEffect(() => {
-      localStorage.setItem('keywords', JSON.stringify(keywords));
+    localStorage.setItem('keywords', JSON.stringify(keywords));
   }, [keywords]);
 
   const handleClick = (value:string) => {

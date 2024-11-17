@@ -10,8 +10,9 @@ const SearchInput = ({searchWord, onClick, onKeyDown, onFocus, onChange, onClear
         e.preventDefault();
         if(searchWord !== '') {
             onClick(searchWord);
-            onClear();
             navigate(`/search?keywords=${encodeURIComponent(searchWord)}`);
+            onClear();
+            onFocus(false);
         }
     }
     
@@ -26,9 +27,10 @@ const SearchInput = ({searchWord, onClick, onKeyDown, onFocus, onChange, onClear
 
     const handleSubmit = (e:React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        // if(searchWord.trim()){ 
-        if(searchWord !== '') {
+        if(searchWord.trim()){ 
+        // if(searchWord !== '') {
             navigate(`/search?keywords=${encodeURIComponent(searchWord)}`);
+            onClear();
         }
     }
   
@@ -44,7 +46,7 @@ const SearchInput = ({searchWord, onClick, onKeyDown, onFocus, onChange, onClear
                         value={searchWord}
                         onFocus={() => onFocus?.(true)} 
                         onChange={(e)=>onChange?.(e.target.value)}
-                        onKeyDown={handleKeyDown}
+                        // onKeyDown={handleKeyDown}
                         placeholder={placeholder}
                     />
                     <button type='submit' onClick={handleClick} className='btnSearch'>검색</button>

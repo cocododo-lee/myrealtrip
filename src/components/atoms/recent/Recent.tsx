@@ -7,13 +7,17 @@ import RecentItem from './RecentItem.tsx';
 interface RecentUIProps  {
   keywords:string[];
   onClear: () => void;
+  onClose: () => void;
 }
 const Recent = (props:RecentUIProps) => {
-  const { keywords, onClear} = props;  
+  const { keywords, onClear,  onClose} = props;  
   const handleClearClick = () => {
     console.log('Clear button clicked'); // 디버깅용
     onClear();
   };
+  const handleCloseLayer = () => {
+    onClose();
+  }
 
   return (
     <div className={RecentStyles.RecentWrap}>
@@ -21,8 +25,8 @@ const Recent = (props:RecentUIProps) => {
         <div className={clsx('RecentBody')}>
           {
             keywords.length > 0 && 
-            keywords.map((items,index) => (
-              <RecentItem key={`${items}${index}`} value={items}/>
+            keywords.map((keyword,index) => (
+              <RecentItem key={`${keyword}${index}`} value={keyword} onClick={handleCloseLayer}/>
             ))
           }
         </div>

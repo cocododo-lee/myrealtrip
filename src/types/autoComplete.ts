@@ -4,4 +4,5 @@ export interface AutoCompleteProps {
     word:string;
     countries:boolean;
     countriesUrl:string;
+    onClear: () => void;
 }

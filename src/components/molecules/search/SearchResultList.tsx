@@ -5,17 +5,18 @@ interface SearchResultProps{
     searchWord:string;
     //searchResult?:object[]; ✏️정확한 타입표현하기 
     searchResult?:AutoCompleteProps[]; 
+    onClear: () => void;
 }
 
 const SearchResultList = (props:SearchResultProps) => {
-  const {searchWord, searchResult} = props;
+  const {searchWord, searchResult, onClear} = props;
   return (
     <div className='searchAutoComplete'>
         <ul className='completeList'>
             {
               searchWord &&
               searchResult?.map((items)=> (
-                <SearchItem key={items.id}  {...items}/>
+                <SearchItem key={items.id}  {...items} onClear={onClear}/>
               ))
             }
         </ul>
