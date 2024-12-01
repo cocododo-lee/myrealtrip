@@ -3,38 +3,36 @@ import { AutoCompleteProps } from '../types/autoComplete';
 interface SearchProps {
     data : AutoCompleteProps[];
 }
+interface searchWordStateProps{
+    searchWord:string;
+    searchResult:AutoCompleteProps[];
+}
 
 const useSearch = ({data} : SearchProps) => {
-    const [searchWord, setSearchWord] = useState<string>('');
-    // const [isFocused, setIsFocused] = useState(false);
-    const searchResult = data.filter((items) => items.word.includes(searchWord))
+    const [searchWords, setsearchWords] = useState<searchWordStateProps>({
+        searchWord : '',
+        searchResult :[],
+    })
 
-  
-    // const handleFocus = () => {
-    //     setIsFocused(true);
-    //   };
-    
-    //   const handleCloseLayer = () => {
-    //     setIsFocused(false);
-    //   };
-  
     const handleChange = (value:string) =>{
-        setSearchWord(value);
+        setsearchWords({
+            ...searchWords,
+            searchWord:value,
+            searchResult : data.filter((items) => items.word.includes(searchWords.searchWord)),
+        });
+        
     };
     const handleDelete= () => {
-        if(searchWord !== '') {
-            setSearchWord('');
-        }
+        setsearchWords({
+            ...searchWords,
+            searchWord:'',
+        });
     }
     
-    return {
-        // isFocused,
-        searchWord, 
+    return { 
+        searchWords,
         handleChange,
         handleDelete,
-        // handleFocus,
-        // handleBlur,
-        searchResult,
     }
 }
 

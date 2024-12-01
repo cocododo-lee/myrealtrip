@@ -26,32 +26,21 @@ const useRecent = () => {
     localStorage.setItem('keywords', JSON.stringify(keywords));
   }, [keywords]);
 
-  const handleClick = (value:string) => {
+  const handleSetKeyword = (value:string) => {
     if(!keywords.includes(value)){
       const newKeywords = [value, ...keywords];
-     // ✏️별로 좋지 않은 방법인지 
-     // setKeywords([value, ...keywords]);
       setKeywords(newKeywords);
     }
   }
 
-  const handleKeyDown = (value:string) => {
-    const newKeywords = [value, ...keywords];
-   // ✏️별로 좋지 않은 방법인지 
-   // setKeywords([value, ...keywords]);
-    setKeywords(newKeywords);
-  }
-
-  const handleRemove= (valueToRemove:string) => { // 😭 타입 지정도 빼 먹음 
+  const handleRemove= (valueToRemove:string) => { 
     const removeDataList =  keywords.filter((keyword:string) => 
-      // return keyword.id != id;
       keyword !== valueToRemove
     );
     setKeywords(removeDataList);
   }
 
   const handleClearClick = () => {
-    //setKeywords(['']) //✏️ 이렇게 할 경우 완전한 빈 배열값이 되지 못한다. 
       if(keywords.length >= 1){
         const resetKeywordConfirm = confirm('최근 검색내역을 전체삭제할까요?');
         if(resetKeywordConfirm) {
@@ -66,8 +55,7 @@ const useRecent = () => {
   
   return {
     keywords,
-    handleClick,
-    handleKeyDown,
+    handleSetKeyword, 
     handleRemove,
     handleClearClick,
   }

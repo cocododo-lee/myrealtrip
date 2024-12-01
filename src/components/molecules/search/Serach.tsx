@@ -6,6 +6,7 @@ import SearchResultList from './SearchResultList.tsx';
 import * as SearchStyles from './Search.css.ts';
 import useRecent from '../../../hook/useRecent.tsx';
 import Recent from '../../atoms/recent/Recent.tsx';
+import useClickOutside from '../../../hook/useClickOutside.tsx';
 
 export interface SearchInputProps{
   searchWord:string;
@@ -22,22 +23,12 @@ export interface SearchInputProps{
 const Serach = () => {
   const [isFocus, setIsFocus] = useState<boolean>(false);
   const searchWrapperRef  = useRef<HTMLDivElement>(null)
-  const { searchWord, handleChange, handleDelete, searchResult} = useSearch({data:AUTO_COMPLETE_DATA});
-  const { keywords, handleClick, handleKeyDown, handleClearClick} = useRecent();
+  const { searchWords, handleChange, handleDelete} = useSearch({data:AUTO_COMPLETE_DATA});
+  const { keywords, handleSetKeyword, handleClearClick} = useRecent();
 
-  useEffect(() => {
-    const handleClickOutside = (e:MouseEvent) => {
-      if (searchWrapperRef.current && !searchWrapperRef.current.contains(e.target as Node)) {
-        setIsFocus(false)
-      }
-    } 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    }
-  }, [isFocus])
-  
-  
+
+  useClickOutside(searchWrapperRef, ()=> setIsFocus(false));
+
   const handleFocus = () => {
     setIsFocus(true);
   };
@@ -50,10 +41,10 @@ const Serach = () => {
 
   return (
     <div className={SearchStyles.SearchWrap} ref={searchWrapperRef}>
-        <SearchInput searchWord={searchWord} onFocus={handleFocus} onChange={handleChange} onClick={handleClick} onClear={handleDelete} onKeyDown={handleKeyDown} placeholder={`도시나 상품을 검색해보세요`}/>
-        <SearchResultList searchWord={searchWord} searchResult={searchResult} onClear={handleDelete} onBlur={handleBlur}/>
+        <SearchInput  searchWord={searchWords.searchWord} onFocus={handleFocus} onChange={handleChange} onClick={handleSetKeyword} onClear={handleDelete} onClose={handleBlur} placeholder={`도시나 상품을 검색해보세요`}/>
+        <SearchResultList searchWord={searchWords.searchWord} searchResult={searchWords.searchResult} onClear={handleDelete}/>
         
-        { !(searchWord) && isFocus && 
+        { isFocus && !searchWords.searchWord &&
           <Recent keywords={keywords} onClear={handleClearClick} onClose={handleBlur}/>
         }
     </div>
